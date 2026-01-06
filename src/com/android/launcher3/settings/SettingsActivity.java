@@ -82,6 +82,7 @@ public class SettingsActivity extends FragmentActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        android.util.Log.d("LogUtil", "SettingsActivity onCreate");
         setContentView(R.layout.settings_activity);
 
         setActionBar(findViewById(R.id.action_bar));
@@ -137,6 +138,9 @@ public class SettingsActivity extends FragmentActivity
     }
 
     private boolean startPreference(String fragment, Bundle args, String key) {
+        android.util.Log.d("LogUtil", "SettingsActivity startPreference fragment: " + fragment);
+        android.util.Log.d("LogUtil", "SettingsActivity startPreference args: " + args.toString());
+        android.util.Log.d("LogUtil", "SettingsActivity startPreference key: " + key);
         if (getSupportFragmentManager().isStateSaved()) {
             // Sometimes onClick can come after onPause because of being posted on the handler.
             // Skip starting new preferences in that case.
